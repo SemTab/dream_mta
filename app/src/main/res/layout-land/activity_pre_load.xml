@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Логотип по центру сверху -->
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="288dp"
+        android:layout_height="257dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/textView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/logo_no_map" />
+
+    <!-- Контент по центру -->
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Загрузка игры"
+        android:fontFamily="@font/sfprodisplaybold"
+        android:letterSpacing="0.02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView11"
+        app:layout_constraintBottom_toTopOf="@id/textView20" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:gravity="center"
+        android:text="Не закрывайте и не сворачивайте данное приложение, загрузка может остановиться"
+        android:textColor="@color/gray_400"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView19"
+        app:layout_constraintBottom_toTopOf="@id/imageView12" />
+        
+    <LinearLayout
+        android:id="@+id/imageView12"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/card"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+            
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:gravity="center"
+            android:text="Для старта загрузки файлов подтвердите загрузку."
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/brp_launcher_pre_load_download"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_play_gradient"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:letterSpacing="0.02"
+            android:text="Загрузить"
+            android:textAllCaps="false"
+            android:textColor="@color/background"
+            android:textSize="16sp" />
+                
+        <Button 
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:id="@+id/brp_launcher_pre_load_faq"
+            android:background="@drawable/button_secondary"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="FAQ"
+            android:textAllCaps="false"
+            android:fontFamily="@font/sfprodisplaymedium" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout> 

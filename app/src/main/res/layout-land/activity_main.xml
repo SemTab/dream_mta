@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayouts" 
+    android:background="@color/background" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Верхняя панель -->
+    <View
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/surface"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Логотип -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:src="@drawable/logo_no_map"
+        app:layout_constraintBottom_toBottomOf="@+id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="DREAM MOBILE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/sfprodisplaybold"
+        android:letterSpacing="0.02"
+        app:layout_constraintBottom_toBottomOf="@+id/topBar"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Верхняя панель с кнопками -->
+    <Button
+        android:id="@+id/brp_launcher_settings_btn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@drawable/button_secondary"
+        android:drawableStart="@drawable/ic_settings_new_icon"
+        android:paddingStart="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/brp_launcher_faq_btn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/button_secondary"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:text="FAQ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/brp_launcher_settings_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/brp_launcher_donate_btn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/button_secondary"
+        android:drawableStart="@drawable/ic_donate_colored"
+        android:paddingStart="@dimen/_12sdp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/brp_launcher_faq_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Вертикальное направляющее для разделения экрана -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+    
+    <!-- Контейнер для новостей (левая часть) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/newsCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/card"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/brp_launcher_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfprodisplaybold"
+                android:text="Новости"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+                    
+            <View
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_600" />
+                    
+            <androidx.recyclerview.widget.RecyclerView 
+                android:orientation="horizontal" 
+                android:id="@+id/rvNews" 
+                android:layout_width="fill_parent" 
+                android:layout_height="match_parent" 
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/_10sdp"
+                android:overScrollMode="never" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    
+    <!-- Контейнер для серверов (правая часть) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/serversCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/card"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/brp_launcher_play"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfprodisplaybold"
+                android:text="Наши сервера"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+                
+            <View
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_600" />
+                    
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvServers"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Кнопка "Играть" (внизу на всю ширину) -->
+    <Button 
+        android:id="@+id/brp_launcher_play" 
+        android:background="@drawable/button_play_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/sfprodisplaybold"
+        android:text="ИГРАТЬ"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:letterSpacing="0.02"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/brp_launcher_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_5sdp"
+        android:fontFamily="@font/atypdisplay_semibold"
+        android:gravity="center"
+        android:text="Пополнить счёт"
+        android:textAllCaps="false"
+        android:textColor="#4568DC"
+        android:textSize="@dimen/_17sdp"
+        android:visibility="gone"
+        app:drawableLeftCompat="@drawable/ic_wallet"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="89dp" />
+</androidx.constraintlayout.widget.ConstraintLayout> 

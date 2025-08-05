@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/card"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ingame_server_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ingame_server_icon"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:src="@drawable/logo_no_map"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ingame_server_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="Cullinan"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toTopOf="@+id/ingame_server_status"
+            app:layout_constraintEnd_toStartOf="@+id/ingame_server_online"
+            app:layout_constraintStart_toEndOf="@+id/ingame_server_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/ingame_server_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:text="Онлайн сервер"
+            android:textColor="@color/gray_400"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ingame_server_name"
+            app:layout_constraintTop_toBottomOf="@+id/ingame_server_name" />
+
+        <LinearLayout
+            android:id="@+id/ingame_server_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/ingame_server_status"
+            app:layout_constraintStart_toEndOf="@+id/ingame_server_status"
+            app:layout_constraintTop_toTopOf="@+id/ingame_server_status">
+
+            <TextView
+                android:id="@+id/ingame_server_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_secondary"
+                android:fontFamily="@font/sfprodisplaymedium"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="ТЕСТ"
+                android:textColor="@color/gray_200"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ingame_server_x2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_secondary"
+                android:fontFamily="@font/sfprodisplaymedium"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="X2"
+                android:textColor="@color/gray_200"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ingame_server_maintenance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_secondary"
+                android:fontFamily="@font/sfprodisplaymedium"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="ТЕХ. РАБОТЫ"
+                android:textColor="@color/gray_200"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ingame_server_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="520"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/ingame_server_max"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/ingame_server_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:text="/1000"
+            android:textColor="@color/gray_400"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ingame_server_online"
+            app:layout_constraintTop_toBottomOf="@+id/ingame_server_online" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView> 

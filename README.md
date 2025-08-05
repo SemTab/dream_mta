@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="./Screenshot_20250627_133950.png" alt="Preview Screenshot" width="600" />
+  <img src="./photo_2025-06-28_16-51-48.jpg" alt="Preview Screenshot" width="600" />
 </p>
 
 ---
